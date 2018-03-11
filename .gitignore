@@ -3,6 +3,9 @@
 /build/
 */build/
 
+/out/
+*/out/
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
