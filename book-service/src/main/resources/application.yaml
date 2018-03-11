@@ -1,7 +1,47 @@
+server:
+  port: 8080
+
 spring:
   application:
     name:
       book-service
-
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: 127.0.0.1
+      port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
+management:
+  health:
+    consul:
+      enabled: false
+  security:
+    enabled: false
+---
 server:
-  port: 8090
+  port: 8080
+
+spring:
+  profiles: docker
+  application:
+    name: book-service
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: consul
+      port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
+management:
+  health:
+    consul:
+      enabled: false
+  security:
+    enabled: false

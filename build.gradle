@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath 'io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE'
         classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.19.2')
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE"
     }
 }
 
@@ -21,6 +22,7 @@ subprojects {
     apply plugin: 'groovy'
     apply plugin: 'idea'
     apply plugin: 'com.palantir.docker'
+    apply plugin: 'org.springframework.boot'
 
     repositories {
         mavenCentral()
