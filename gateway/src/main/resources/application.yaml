@@ -1,11 +1,63 @@
+spring:
+  application:
+    name:
+      gateway
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: 127.0.0.1
+      port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
 zuul:
   ignoredServices: '*'
   routes:
     books:
       path: /books/**
-      url: http://localhost:8090
-
-ribbon.eureka.enabled: false
+      serviceId: book-service
 
 server:
   port: 8080
+
+management:
+  health:
+    consul:
+      enabled: false
+  security:
+    enabled: false
+
+---
+spring:
+  profiles: docker
+  application:
+    name: gateway
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: consul
+      port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    books:
+      path: /books/**
+      serviceId: book-service
+
+server:
+  port: 8080
+
+management:
+  health:
+    consul:
+      enabled: false
+  security:
+    enabled: false
