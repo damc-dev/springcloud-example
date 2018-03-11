@@ -10,8 +10,6 @@ services:
 
   book-service:
     image: dmcelligott/book-service
-    ports:
-      - 8090:8090
     links:
       - consul
 
