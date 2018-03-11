@@ -1,0 +1,5 @@
+rootProject.name = 'dmcelligott'
+include 'gateway'
+include 'book-service'
+include 'service-registry'
+

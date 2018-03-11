@@ -1,0 +1,14 @@
+group 'com.dmcelligott'
+
+jar {
+    baseName = 'gateway'
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all'
+    compile('org.springframework.cloud:spring-cloud-starter-zuul')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+

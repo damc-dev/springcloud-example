@@ -1,0 +1,11 @@
+zuul:
+  ignoredServices: '*'
+  routes:
+    books:
+      path: /books/**
+      url: http://localhost:8090
+
+ribbon.eureka.enabled: false
+
+server:
+  port: 8080
