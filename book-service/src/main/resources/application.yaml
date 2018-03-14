@@ -1,10 +1,15 @@
-server:
-  port: 8090
-
 spring:
   application:
     name:
       book-service
+
+---
+
+server:
+  port: 8090
+
+spring:
+  profiles: local
   cloud:
     consul:
       discovery:
@@ -28,8 +33,6 @@ server:
 
 spring:
   profiles: docker
-  application:
-    name: book-service
   cloud:
     consul:
       discovery:
@@ -40,6 +43,21 @@ spring:
         enabled: true
         watch:
           enabled: true
+management:
+  health:
+    consul:
+      enabled: false
+  security:
+    enabled: false
+
+---
+
+spring:
+  profiles: unit
+  cloud:
+    consul:
+        enabled: false
+
 management:
   health:
     consul:

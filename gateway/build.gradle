@@ -5,10 +5,13 @@ jar {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all'
+    compile('org.codehaus.groovy:groovy-all')
     compile('org.springframework.cloud:spring-cloud-starter-zuul')
+    compile('org.springframework.boot:spring-boot-starter-logging')
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.cloud:spring-cloud-starter-consul-discovery')
+    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
