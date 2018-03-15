@@ -4,6 +4,7 @@ spring:
       gateway
   cloud:
     consul:
+      enabled: true
       discovery:
         prefer-ip-address: true
       host: 127.0.0.1
@@ -36,6 +37,7 @@ spring:
     name: gateway
   cloud:
     consul:
+      enabled: true
       discovery:
         prefer-ip-address: true
       host: consul
