@@ -25,9 +25,6 @@ spring:
         watch:
           enabled: true
 management:
-  health:
-    consul:
-      enabled: false
   security:
     enabled: false
 
@@ -49,9 +46,6 @@ spring:
         watch:
           enabled: true
 management:
-  health:
-    consul:
-      enabled: false
   security:
     enabled: false
 
@@ -64,8 +58,5 @@ spring:
         enabled: false
 
 management:
-  health:
-    consul:
-      enabled: false
   security:
     enabled: false
