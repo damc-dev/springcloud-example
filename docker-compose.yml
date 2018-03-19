@@ -12,9 +12,9 @@ services:
     image: dmcelligott/book-service
     links:
       - consul
-      - recommendation-service
+      - book-recommendation-service
 
-  recommendation-service:
+  book-recommendation-service:
     image: dmcelligott/book-recommendation-service
     links:
       - consul

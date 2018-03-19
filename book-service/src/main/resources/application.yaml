@@ -6,6 +6,8 @@ spring:
     consul:
       enabled: false
 
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+
 ---
 
 server:
