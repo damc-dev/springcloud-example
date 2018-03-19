@@ -1,0 +1,62 @@
+spring:
+  application:
+    name:
+      book-recommendation-service
+  cloud:
+    consul:
+      enabled: false
+
+---
+
+server:
+  port: 8091
+
+spring:
+  profiles: local
+  cloud:
+    consul:
+      enabled: true
+      discovery:
+        prefer-ip-address: true
+      host: 127.0.0.1
+      port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
+management:
+  security:
+    enabled: false
+
+---
+server:
+  port: 8091
+
+spring:
+  profiles: docker
+  cloud:
+    consul:
+      enabled: true
+      discovery:
+        prefer-ip-address: true
+      host: consul
+      port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
+management:
+  security:
+    enabled: false
+
+---
+
+spring:
+  profiles: unit
+  cloud:
+    consul:
+        enabled: false
+
+management:
+  security:
+    enabled: false

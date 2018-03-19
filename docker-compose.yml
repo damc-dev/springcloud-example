@@ -12,6 +12,12 @@ services:
     image: dmcelligott/book-service
     links:
       - consul
+      - recommendation-service
+
+  recommendation-service:
+    image: dmcelligott/book-recommendation-service
+    links:
+      - consul
 
   gateway:
     image: dmcelligott/gateway
