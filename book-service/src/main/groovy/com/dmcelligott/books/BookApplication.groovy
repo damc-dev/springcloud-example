@@ -41,6 +41,7 @@ class BookApplication {
     @RequestMapping('/recommendations')
     @ResponseBody
     String recommendations() {
+        log.info("recommendations endpoint")
         ResponseEntity<String> entity = restTemplate.getForEntity("http://book-recommendation-service/recommended", String.class)
         return entity.getBody()
     }
