@@ -25,3 +25,13 @@ services:
       - 8080:8080
     links:
       - consul
+
+  hystrix-dashboard:
+    image: dmcelligott/hystrix-dashboard
+    ports:
+      - 8092:8092
+    links:
+      - consul
+      - book-recommendation-service
+      - book-service
+      - gateway
