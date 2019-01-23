@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE'
-        classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.19.2')
+        classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.21.0')
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE"
     }
 }
@@ -33,16 +33,19 @@ subprojects {
 
     dependencyManagement {
         dependencies {
+
             dependency 'org.codehaus.groovy:groovy-all:2.4.7'
             dependency 'junit:junit:4.12'
             dependency 'org.spockframework:spock-core:1.1-groovy-2.4'
             dependency 'org.spockframework:spock-spring:1.1-groovy-2.4'
             dependency 'cglib:cglib-nodep:3.2.4'
+            dependency 'io.opentracing.contrib:opentracing-spring-cloud-starter:0.2.2'
+            dependency 'io.jaegertracing:jaeger-client:0.32.0'
 
         }
 
         imports {
-            mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Edgware.SR2'
+            mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5'
         }
     }
 

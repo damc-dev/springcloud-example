@@ -41,4 +41,16 @@ class BookApplicationSpec extends Specification {
         entity.getBody() == 'Spring in Action'
     }
 
+
+    def 'checkout book'() {
+        when:
+        ResponseEntity<String> entity = testRestTemplate.postForEntity('/checkout',
+                new Book("Clean Code", "Robert Martin"), String.class)
+        then:
+        log.info("reponse: {}", entity.getBody())
+        entity.getStatusCode() == HttpStatus.OK
+        entity.getBody() == 'Checked out Clean Code by Robert Martin'
+    }
+
+
 }

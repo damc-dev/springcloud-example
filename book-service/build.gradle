@@ -6,7 +6,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-logging')
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.cloud:spring-cloud-starter-consul-discovery')
-    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+    compile('io.opentracing.contrib:opentracing-spring-cloud-starter')
+    compile('io.jaegertracing:jaeger-client')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.spockframework:spock-core:1.1-groovy-2.4')

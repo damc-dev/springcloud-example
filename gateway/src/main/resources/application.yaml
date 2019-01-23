@@ -27,6 +27,14 @@ management:
   security:
     enabled: false
 
+logging:
+  level:
+    io.opentracing: trace
+    org:
+      springframework:
+        cloud:
+          netflix: debug
+
 ---
 spring:
   profiles: docker
