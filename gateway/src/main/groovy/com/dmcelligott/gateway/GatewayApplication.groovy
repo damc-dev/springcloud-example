@@ -20,4 +20,6 @@ class GatewayApplication {
     SimpleFilter simpleFilter() {
         return new SimpleFilter()
     }
+
+
 }
